@@ -1,124 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Montre</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    <title>Horloge</title>
 </head>
 <body>
+    
 
-
-    <div class="montre">
-      <div class="cadran">
-        <div class="aiguille heure"></div>
-        <div class="aiguille minute"></div>
-        <div class="aiguille seconde"></div>
-      </div>
+<div class="wrapper">
+    
+    <div class="hands">
+      <div class="hours"></div>
+      <div class="minutes"></div>
+      <div class="seconds"></div>
+  
     </div>
-
-
-  <style>
-
-    html {
-
-      font-family:sans-serif;
-      text-align: center;
-
-    }
-
-    body {
-
-      margin: 0;
-      font-size: 2rem;
-      display:flex;
-      flex:1;
-      min-height: 100vh;
-      align-items: center;
-
-    }
-
-    .montre {
-
-      width: 30rem;
-      height: 30rem;
-      border:20px solid#E7E7E7;
-      border-radius:50%;
-      margin:50px auto;
-      position: relative;
-      padding:2rem;
-      box-shadow:
-        0 0 0 4px rgba(0,0,0,0.1),
-        inset 0 0 0 3px #C0C0C0 ,
-        inset 0 0 10px black,
-        0 0 10px rgba(0,0,0,0.2);
-    }
-
-    .cadran { 
-      position: relative;
-      width: 100%;
-      height: 100%;
-      transform: translateY(-3px);
-    }
-
-    .aiguille {
-      width:50%;
-      height:6px;
-      background:#a62c2b;
-      position: absolute;
-      top:50%;
-      transform-origin: 100%;
-      transform: rotate(90deg);
-      transition: all 0.05s;
-      transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
-      
-    }
-    .heure {
-        clip-path: polygon(100% 0, 20% 50%, 100% 100%);
-
-    }
-    .minute {
-        clip-path: polygon(100% 0, 10% 50%, 100% 100%);
-        
-    }
-    .seconde {
-        clip-path: polygon(100% 35%, 3% 50%, 100% 70%);
-        background:#4682B4;
-    }
-
-</style>
-<script>
-
-    const secondDiv = document.querySelector('.seconde');
-    const minDiv = document.querySelector('.minute');
-    const hourDiv = document.querySelector('.heure');
-    
-    
-    function setDate(){
-        
-        const now = new Date();
-
-        let seconds = now.getSeconds();
-        const secDeg = ((seconds/60) * 360 + 90);
-        secondDiv.style.transform = `rotate(${secDeg}deg)`;
-        
-        
-        const mins = now.getMinutes();
-        const minDeg = ((mins/60) * 360) + ((seconds/60)*6) + 90;
-        minDiv.style.transform = `rotate(${minDeg}deg)`;
-        
-        
-        const hour = now.getHours();
-        const hourDeg = ((hour/12)*360) + ((mins/60)*30) + 90;
-        hourDiv.style.transform = `rotate(${hourDeg}deg)`;
-        
-        
-    }
-    
-  setInterval(setDate,1000);
-    
-    
-    
-    
-    
-</script>
+    <div class="button"></div>  
+  </div>
+  
 </body>
 </html>

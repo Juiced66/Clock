@@ -1,0 +1,101 @@
+body {
+
+    background-color: #333;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    height: 100vh;
+
+  }
+  
+  /* Cadre de la montre */
+  .wrapper {
+
+    height: 50vh;
+    width: 50vh;
+    background-color:white;
+    border-radius: 50%;
+    position: relative;
+    
+  }
+  
+  /* div contenant les aiguilles */
+  .hands {
+
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+  }
+  
+  /* style par défault de toutes les aiguilles */
+  .hands>*{
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    transform: translateY(-100%);
+    transform-origin: 50% 0%;
+    box-shadow: 0 0 1vh rgba(0,0,0,0.5);
+  }
+  
+  /* style de chaque aiguille */
+  .hands .hours {
+
+    height: 15vh;
+    width: 2vh;
+    background-color: black;
+
+  }
+  
+  .hands .minutes {
+
+    height: 20vh;
+    width: 1vh;
+    background-color: black;
+
+  }
+  
+  .hands .seconds {
+
+    height: 20vh;
+    width: .5vh;
+    background-color: red;
+    box-shadow: 0 0 1vh rgba(255,0,0,0.5);
+    
+  }
+  
+  .button {
+    height: 3vh;
+    width: 3vh;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 1vh rgba(0,0,0,0.5);
+  }
+  
+  .marker, .mainMarker {
+    content: "";
+    background-color: black;
+    height: 1.5vh;
+    width: 0.5vh;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform-origin: 0 25vh;
+  }
+  
+  .mainMarker{
+    height: 5vh;
+    width: 1vh;
+  }
+  
+  
